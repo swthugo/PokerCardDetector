@@ -5,8 +5,7 @@ import org.pokercardpatterndectector.PatternDetector;
 
 public interface PatternPredicate {
 
-    boolean detect(PatternDetector p);
+  boolean detect(PatternDetector p);
 
-    CardPattern getPattern();
-
+  CardPattern getPattern();
 }

@@ -1,33 +1,30 @@
 package org.pokercardpatterndectector.predicates;
 
-import org.pokercardpatterndectector.Card;
 import org.pokercardpatterndectector.CardPattern;
 import org.pokercardpatterndectector.PatternDetector;
 
-import java.util.Map;
-
 public class FullHouse implements PatternPredicate {
 
-    @Override
-    public boolean detect(PatternDetector p) {
+  @Override
+  public boolean detect(PatternDetector p) {
 
-        int numThreeOFAKind = 0;
-        int numParis = 0;
+    int numThreeOFAKind = 0;
+    int numParis = 0;
 
-        for (int count : p.getRank().values()) {
-            if (count >= 2) {
-                numParis++;
-            }
-            if (count >= 3) {
-                numThreeOFAKind++;
-            }
-        }
-
-        return numThreeOFAKind >= 1 && numParis >= 2;
+    for (int count : p.getRank().values()) {
+      if (count >= 2) {
+        numParis++;
+      }
+      if (count >= 3) {
+        numThreeOFAKind++;
+      }
     }
 
-    @Override
-    public CardPattern getPattern() {
-        return CardPattern.FULL_HOUSE;
-    }
+    return numThreeOFAKind >= 1 && numParis >= 2;
+  }
+
+  @Override
+  public CardPattern getPattern() {
+    return CardPattern.FULL_HOUSE;
+  }
 }

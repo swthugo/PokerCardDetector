@@ -23,8 +23,8 @@ public class PatternDetector {
   Map<Card.Rank, Integer> rank;
   Map<Card.Suit, Integer> suit;
 
-
   public PatternDetector(Card[] cards) {
+
     rank = new HashMap<>();
     suit = new HashMap<>();
 
@@ -124,6 +124,5 @@ public class PatternDetector {
     }
     return CardPattern.HIGH_CARD;
   }
-
 }
 
